@@ -1,8 +1,10 @@
 import cv2
 
 chess_image = cv2.imread('chessboard.png')
+templ = cv2.imread('templ.png')
 cv2.imshow("Image", chess_image)
 image = cv2.bitwise_not(chess_image)
+image = cv2.bitwise_and(chess_image)
 width = int(image.shape[1] * 0.3)
 height = int(image.shape[0] * 0.5)
 dim = (height, width)
