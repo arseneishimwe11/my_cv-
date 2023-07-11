@@ -1,5 +1,5 @@
-#Python code for PC/Raspberry Pi:
-#!/usr/bin/env python3
+# Python code for PC/Raspberry Pi:
+# !/usr/bin/env python3
 
 import serial
 import time
@@ -7,7 +7,7 @@ from os import system
 
 if __name__ == "__main__":
     ser = serial.Serial(
-        port="/dev/tty.usbmodem101",
+        port="COM3",
         baudrate=9600,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     )
     ser.flush()
    
-    system("clear")
+
     while True:
         msg = input("$ ")
         msg_as_bytes = bytes(msg+"\n", "UTF-8")

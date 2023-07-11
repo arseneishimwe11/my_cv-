@@ -17,11 +17,11 @@ while stream.isOpened():
         )
         stream.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         stream.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-        for (a, b, c, d) in faces:
-            cv2.rectangle(frame, (a, b), (a+c, b+d), (0, 255, 255), 2)
-            cv2.cvtColor(faces, cv2.COLOR_BGR2GRAY)
+        # for (a, b, c, d) in faces:
+            # cv2.rectangle(frame, (a, b), (a+c, b+d), (0, 255, 255), 2)
+            # cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         cv2.imshow('Live Stream', frame)
-        cv2.imwrite('Detected_face.png', frame)
+        cv2.imwrite('my_face.png', frame)
         if cv2.waitKey(25) & 0xFF == ord('q'):
             break
     else:
